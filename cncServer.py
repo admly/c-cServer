@@ -43,6 +43,9 @@ while True:
                 print('sent')
             else:
                 print('no data from', client_address)
+                print('trying to send payload anyway')
+                connection.sendall(serialized)
+                connection.sendall(b"\n")
                 break
     finally:
         # Clean up the connection
